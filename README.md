@@ -10,6 +10,7 @@
 
 Instalación:
 * npm init -y (e instalación de nodemon)
+* npm install @faker-js/faker
 * npm install bcrypt
 * npm install commander
 * npm install connect-mongo
@@ -35,6 +36,7 @@ Instalación:
 ## Funcionamiento de los endpoints:
 * Al acceder a http://localhost:8080/api/products, se obtienen todos los productos.
 * Al acceder a http://localhost:8080/api/carts, se obtienen todos los carritos.
+* Al acceder a http://localhost:8080/api/users, se obtienen todos los usuarios registrados. Y para ver el uso de faker http://localhost:8080/api/users/mock/2
 
 ## Endpoints de handlebars:
 - **Página de index:** http://localhost:8080/
