@@ -112,8 +112,15 @@ router.get("/register", async (req, res) => {
 // Ruta para la página de chat
 router.get("/chat", async (req, res) => {
   try {
-    const messages = await messageModel.find().lean().exec();
-    res.render("chat", { messages });
+    // Verifica si hay un usuario logueado
+    if (req.user) {
+      // Si hay un usuario logueado, renderiza la página de chat
+      const messages = await messageModel.find().lean().exec();
+      res.render("chat", { messages });
+    } else {
+      // Si no hay un usuario logueado, redirige al login
+      res.redirect("/login");
+    }
   } catch (err) {
     console.error("Error:", err);
     res.status(500).json({ status: "error", error: err.message });

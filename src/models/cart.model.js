@@ -7,7 +7,8 @@ const collection = 'carts'
 
 const schema = new mongoose.Schema({
     products: { type: [ mongoose.Schema.Types.ObjectId ], ref: 'products' }, // ref a la colección
-    total: { type: Number, required: true }
+    total: { type: Number, required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'users' }
 })
 
 schema.pre('find', function() {
